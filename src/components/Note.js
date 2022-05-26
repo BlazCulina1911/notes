@@ -1,9 +1,10 @@
-const Note = ({note, toggleImportance}) => {
+const Note = ({note, toggleImportance, removeNote}) => {
     return(
-        <li>
+        <li className='note' key={note.content}>
             {note.content}
         <div>
             <button onClick={() => toggleImportance(note.id)}>{note.important ? <>Set to important</>:<>Set to unimportant</>}</button>
+            <button onClick={() => removeNote(note.id)}>Delete</button>
         </div>
         </li>
     )
