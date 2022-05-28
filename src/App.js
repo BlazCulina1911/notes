@@ -18,7 +18,7 @@ function App() {
     const [notes, setNotes] = useState([])
     const [newNote, setNewNote] = useState('')
     const [showImportant, setImportant] = useState(true)
-    const [errorMessage, setErrorMessage] = useState('some error happened...')
+    const [errorMessage, setErrorMessage] = useState(null)
 
     const newNoteHandler = (event) => setNewNote(event.target.value)
     const toggleImportant = () => setImportant(!showImportant)
