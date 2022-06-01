@@ -53,6 +53,10 @@ function App() {
             .update(id, modifiedNote)
             .then(returnedNote => {
                 setNotes(notes.map(note => note.id === id ? returnedNote : note))
+                console.log(returnedNote)
+                console.log(returnedNote.content)
+                console.log(returnedNote.important)
+                setErrorMessage(`Note '${returnedNote.content}' has been set to ${returnedNote.important? "IMPORTANT" : "UNIMPORTANT" }`)
             })
             .catch(error => {
                 setErrorMessage(`Note '${note.content}' was already removed from server`)
